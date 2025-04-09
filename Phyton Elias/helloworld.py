@@ -85,10 +85,11 @@ for my_item in range(10):
 class MyClass:
     my_name: str = "Elias"
     my_age: int = 20
-
+    
     def __init__(self):
         self.my_name = "Elias"
         self.my_age = 20
+        
 
 my_clase = MyClass() # Instanciando la clase
 print(my_clase.my_name)
