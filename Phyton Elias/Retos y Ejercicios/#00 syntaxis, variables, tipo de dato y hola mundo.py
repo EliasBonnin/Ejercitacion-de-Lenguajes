@@ -10,6 +10,7 @@ print("Hola, Phython")
 
 my_variable = "Variable de string"
 print(my_variable)
+
 my_string = "Esto es una cadena de texto"
 my_int = 7
 my_float = 3.14
@@ -32,6 +33,7 @@ Codigo
 
 """
 Esto es otra forma de comentar.
+Muchas lineas de codigo
 
 """
 
