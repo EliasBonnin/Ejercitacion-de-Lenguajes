@@ -2,6 +2,8 @@
 
 # En el siguiente URL https:/python.org Tenemos la documentacion de phyton y donde podemos ver todas las funciones y metodos que podemos usar en phyton.
 
+# Los retos se encuentran en https://retosdeprogramacion.com/ 
+
 #Tipo de operadores de Lenguaje *Aritmenticos*
 
 # Variables para uso Aritmetico
@@ -163,7 +165,3 @@ for i in range(1, 6):
     print(i) # Estructura de control FOR con break
     if i == 2:
         continue
-
-    
-
-
