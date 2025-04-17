@@ -103,3 +103,17 @@ def Array_nombres_edad(edad):
 round_edad_print = Array_nombres_edad(var_edad)
 
 print(round_edad_print)
+
+# Vemos el uso de la variable global
+
+variable_global = 'Global'
+
+
+def hola_global():
+    variable_local = 'Variable'
+    print(f'{variable_local} {variable_global}')
+
+# print(variable_local) no funciona porque la variable es local a la funcion
+
+
+hola_global()
