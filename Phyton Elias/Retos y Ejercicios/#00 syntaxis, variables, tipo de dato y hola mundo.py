@@ -1,14 +1,12 @@
-#Ejercicio 00
-
-# En el siguiente URL https:/python.org Tenemos la documentacion de phyton y donde podemos ver todas las funciones y metodos que podemos usar en phyton.
-
-# Los retos se encuentran en https://retosdeprogramacion.com/ 
+# Ejercicio 00
+# En el siguiente URL https:/python.org Tenemos la documentacion de phyton
+# # Los retos se encuentran en https://retosdeprogramacion.com
 
 # Hola mundo Python
 
 print("Hola, Phython")
 
-#Declarando variables
+# Declarando variables
 
 my_variable = "Variable de string"
 print(my_variable)
@@ -18,7 +16,7 @@ my_int = 7
 my_float = 3.14
 my_bool = False
 
-MY_CONSTAT = 1 # Constantes en Python, se recomienda usar mayusculas para definirlas.
+MY_CONSTAT = 1  # Constantes en Python
 
 print(type(my_int))
 print(type(my_float))
@@ -38,4 +36,3 @@ Esto es otra forma de comentar.
 Muchas lineas de codigo
 
 """
-
