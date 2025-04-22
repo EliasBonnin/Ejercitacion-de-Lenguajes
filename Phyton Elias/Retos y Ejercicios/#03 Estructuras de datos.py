@@ -13,13 +13,13 @@ localidad = 'Posadas'
 my_list = [1, 2, 3, 'Hola']
 
 # Tipo de Estrctura set
-my_set = [1, 2, 3,]
+my_set = {1, 3, 4, 2}
 
 # Tipo de Estrctura diccionario
-my_dic = {'nombre:': nombre, 'edad:': edad, 'localidad': localidad}
+my_dict: dict = {'nombre:': nombre, 'edad:': edad, 'localidad': localidad}
 
 # Tipo de estructura tupla
-my_tupla = [1, 2, 3]
+my_tupla: tuple = (4, 5, 1, 8)
 
 # Ejecutamos comando sobre las Estructuras
 
@@ -46,20 +46,42 @@ my_list[0] = 4  # Actualizamos el valor de la lista asignando otro
 print(my_list)
 
 my_list.sort()  # Ordenamos de manera ascenedente
-print(my_list)
 
-#  Tipo set
+print(f"{my_list}\n")
 
+# Tuplas
+
+print(my_tupla[1])  # Acceso
+
+my_tupla = tuple(sorted(my_tupla))  # Ordenacion
+
+print(f"{my_tupla}\n")
+
+# Sets
+
+my_set.add(6)  # Insercion
 print(my_set)
 
-my_set.append(4)  # Agregamos un valor al set
+# No se puede insertar el mismo dato, de esta manera podemos serializar de manera mas facil //my_set.add(6)
+
+# Eso no se puede hacer porque no tiene sentido en el Set //print(my_set[0])
+
+my_set.remove(6)  # Borrado
+
+my_set = set(sorted(my_set))  # No se puede ordenar por su naturaleza
 print(my_set)
 
-my_set.insert(2, 3.5)  # Inserta en una posicion espeficifa un valor
-print(my_set)
 
-my_set.remove(4)  # Remueve un valor conocido del set
-print(my_set)
+# Diccionario
 
-del my_set[0]  # Elimina el elemento en el lugar 0 (primero)
-print(my_set)
+print(my_dict)
+
+print(my_dict['nombre:'])  # Acceso
+
+my_dict["provincia:"] = 'Misiones'  # Insercion
+
+my_dict['localidad'] = 'Garuhape'  # Actualizacion
+
+del my_dict['edad:']
+
+print(my_dict)
