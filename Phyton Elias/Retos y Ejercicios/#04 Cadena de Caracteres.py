@@ -98,3 +98,9 @@ v_cadena5 = int(v_cadena5)
 print(v_cadena5)
 v_cadena5 = float(v_cadena5)
 print(v_cadena5)
+
+# Comprobaciones
+
+print(v_cadena4.isalnum())  # alfanumero
+print(v_cadena.isalpha())  # Solo alfabetico
+print(v_cadena.isnumeric())  # Es numerico
