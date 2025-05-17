@@ -7,6 +7,9 @@
 v_cadena = "Hola"
 v_cadena2 = "Python"
 v_cadena3 = "elias bonnin"
+v_cadena4 = "elias bonnin @hotmail"
+v_cadena5 = "123456"
+list_c = [v_cadena, ", ", v_cadena2, "! "]
 
 # Concatenacion
 
@@ -65,5 +68,33 @@ print(v_cadena.endswith("la"))  # Podemos ver si la cadena termina por un determ
 
 # Busqueda de posicion
 
-print("elias bonnin @hotmail".find("bonnin"))  # Nos dice la Posicion donde esta empezando esa cadena buscada
-print("Elias Bonnin @hotmail".lower().find("b"))
+print(v_cadena4.find("bonnin"))  # Nos dice la Posicion donde esta empezando esa cadena buscada
+print(v_cadena4.lower().find("b"))  # Se queda con la primera ocurrencia de match
+
+# Busqueda de ocurrencias
+
+print(v_cadena4.lower().count("n"))  # Me dice cuantas "n" hay en una cadena
+
+# Formatear
+
+print("Saludo: {} , Lenguaje: {} !".format(v_cadena, v_cadena2))
+
+# Interpolacion FSTRING
+
+print(f"Saludo: {v_cadena} , Lenguaje: {v_cadena2} !")
+
+# Transformacion en lista de caracteres
+
+print(list(v_cadena3))
+
+# Transformacion de lista en cadena
+
+print("".join(list_c))  # Une o concatena una lista de caracteres por un criterio
+
+# Transformaciones numericas
+
+print(v_cadena5)
+v_cadena5 = int(v_cadena5)
+print(v_cadena5)
+v_cadena5 = float(v_cadena5)
+print(v_cadena5)
