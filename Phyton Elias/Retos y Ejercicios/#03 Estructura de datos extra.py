@@ -33,14 +33,14 @@ def mostrar_menu():
     print("5. Salir\n")
 
 
+# limpiar_consola()
 while True:
-    limpiar_consola()
     mostrar_menu()
     op_interfaz = input("Elegir opcion 1-5\n")
 
     if op_interfaz == "1":
         limpiar_consola()
-        print("Insertar Contacto\n")
+        print("      Insertar Contacto\n")
         nombre_agenda = input("Ingresa el nombre del usuario \n")
         while True:
             num_tel = input("Ingrese el numero de telefono \n")
@@ -52,7 +52,25 @@ while True:
                 print("El numero debe ser solo numeros y debe tener un maximo de 11 digitos \n")
 
     elif op_interfaz == "2":
-        print("Vamos a actualizar un contacto")
+        limpiar_consola()
+        print("Actualizar un contacto\n")
+        while True:
+            nombre_agenda = input("Ingrese el Nombre o ingrese 0 para salir\n")
+            if nombre_agenda in my_agenda:
+                num_tel = input("Ingrese el numero de telefono \n")
+                break
+            elif nombre_agenda == "0":
+                break
+            else:
+                print("El nombre de contacto no existe, intente nuevamente")
+
+        while True:
+            if num_tel.isdigit() and len(num_tel) <= 11:
+                my_agenda[nombre_agenda] = num_tel
+                print("El contacto se actualizo correctamete")
+                break
+            else:
+                print("El numero debe ser solo numeros y debe tener un maximo de 11 digitos \n")
     elif op_interfaz == "3":
         print("Vamos a buscar un contacto")
     elif op_interfaz == "4":
