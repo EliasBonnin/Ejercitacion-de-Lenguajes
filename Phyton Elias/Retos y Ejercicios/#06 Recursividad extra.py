@@ -4,7 +4,7 @@
 
 # Factorial de un numero concreto
 
-def Factorial(valor):
+def Factorial(valor: int) -> int:
     if valor == 0:
         return 1
     else:
