@@ -1,4 +1,4 @@
-# Ejercicio 04* Extra
+# Ejercicio 06
 # En el siguiente URL https:/python.org Tenemos la documentacion de phyton.
 # Los retos se encuentran en https://retosdeprogramacion.
 
