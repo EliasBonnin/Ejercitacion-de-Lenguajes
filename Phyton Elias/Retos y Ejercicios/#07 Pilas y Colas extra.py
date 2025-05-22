@@ -1,4 +1,4 @@
-# Ejercicio 07
+# Ejercicio 07 extra
 # En el siguiente URL https:/python.org Tenemos la documentacion de phyton.
 # Los retos se encuentran en https://retosdeprogramacion.
 
@@ -30,7 +30,9 @@ def NavegacionWeb():
             print("Estas en la pagina de inicio")
 
 
-# NavegacionWeb()
+NavegacionWeb()
+
+# Impresorapy COLA
 
 
 def Impresorapy():
