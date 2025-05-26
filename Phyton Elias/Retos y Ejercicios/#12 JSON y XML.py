@@ -19,7 +19,7 @@ json_archivo = "elias.json"
 # XML
 
 
-def guardado_xml():
+def crear_xml():
 
     root = xml.Element("data")  # El elemento raiz de donde vamos a crear todo
 
@@ -35,7 +35,7 @@ def guardado_xml():
     tree.write(xml_archivo)
 
 
-guardado_xml()  # Llamado a la funcion XML
+crear_xml()  # Llamado a la funcion XML
 
 with open(xml_archivo) as fichero:
     print(fichero.read())
@@ -45,10 +45,54 @@ os.remove(xml_archivo)
 
 # JSON
 
-with open(json_archivo, "w") as json_data:
-    json.dump(datos, json_data)
+
+def create_json():
+    with open(json_archivo, "w") as json_data:
+        json.dump(datos, json_data)
+
+
+create_json()  # Llamado a la funcion JSON
 
 with open(json_archivo) as fichero:
     print(fichero.read())
 
 os.remove(json_archivo)
+
+# Extra
+
+# XML
+
+
+class Datos:
+
+    def __init__(self, nombre, edad, fecha_nacimiento, lenguaje_prog):
+        self.nombre = nombre
+        self.edad = edad
+        self.fecha_nacimiento = fecha_nacimiento
+        self.lenguaje_prog = lenguaje_prog
+
+
+with open(xml_archivo, "r") as fichero_xml:
+    root = xml.fromstring(fichero_xml.read())
+    nombre = root.find("nombre").text
+    edad = root.find("edad").text
+    fecha_nacimiento = root.find("fecha_nacimiento").text
+    lenguajes_prog = []
+    for item in root.find("lenguajes_prog"):
+        lenguajes_prog.append(item.text)
+
+datos_de_xml = Datos(nombre, edad, fecha_nacimiento, lenguajes_prog)
+print(datos_de_xml.__dict__)
+
+
+# JSON
+
+with open(json_archivo, "r") as fichero_json:
+    datas_json = json.load(fichero_json)
+    nombre = datas_json["nombre"]
+    edad = datas_json["edad"]
+    fecha_nacimiento = datas_json["fecha_nacimiento"]
+    lenguajes_prog = datas_json["lenguajes_prog"]
+    datos_de_json = Datos(nombre, edad, fecha_nacimiento, lenguajes_prog)
+
+print(datos_de_json.__dict__)
