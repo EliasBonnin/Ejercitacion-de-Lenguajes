@@ -5,6 +5,7 @@
 # Manejo de Ficheros
 
 import os
+import time
 
 nombre_archivo = "EliasBonnin.txt"
 
@@ -32,40 +33,80 @@ open(archivo_local, "a")
 
 
 def mostrar_menu():
-    print("\n Gestion de Productos")
+    print("Gestion de Productos")
     print("1. insertar Producto")
     print("2. Actualizar Producto")
     print("3. Buscar Producto")
     print("4. Borrar Producto")
-    print("5. Calcular Venta por Producto")
-    print("6. Calcular Venta Total")
-    print("7. Salir\n")
+    print("5. Mostrar Productos")
+    print("6. Calcular Venta por Producto")
+    print("7. Calcular Venta Total")
+    print("8. Salir\n")
 
 
 while True:
-    limpiar_consola()
     mostrar_menu()
 
     action = input("Elegir Opcion:  ")
 
     if action == "1":
-        limpiar_consola()
         nombre = input("Ingrese nombre de producto:  ")
         cantidad = input("Ingrese cantidad vendida:  ")
         precio = input("Ingrese el precio:  ")
         with open(archivo_local, "a") as archivo:
             archivo.write(f"{nombre}, {cantidad}, {precio}")
     elif action == "2":
-        pass
+        nombre = input("Ingrese nombre de producto:  ")
+        cantidad = input("Ingrese cantidad vendida:  ")
+        precio = input("Ingrese el precio:  ")
+        with open(archivo_local, "w") as archivo:
+            for line in archivo.readlines():
+                if line.split(", ")[0] == nombre:
+                    archivo.write(f"{nombre}, {cantidad}, {precio}\n")
+                else:
+                    archivo.write(line)
     elif action == "3":
-        pass
+        nombre = input("Ingresas nombre: ")
+        with open(archivo_local, "r") as archivo:
+            for line in archivo.readlines():
+                if line.split(", ")[0] == nombre:
+                    print(line)
+                    time.sleep(1)
+                    break
     elif action == "4":
-        pass
+        nombre = input("Ingresas nombre: ")
+        with open(archivo_local, "r") as archivo:
+            lines = archivo.readlines()
+        with open(archivo_local, "w") as archivo:
+            for line in lines:
+                if line.split(", ")[0] != nombre:
+                    archivo.write(line)
     elif action == "5":
-        pass
+        with open(archivo_local, "r") as archivo:
+            print(archivo.read())
+            time.sleep(1)
     elif action == "6":
-        pass
+        total = 0
+        with open(archivo_local, "r") as archivo:
+            for line in archivo.readlines():
+                components = line.split(", ")
+                quantity = int(components[1])
+                price = float(components[2])
+                total += quantity * price
+        print(total)
     elif action == "7":
+        name = input("Nombre: ")
+        total = 0
+        with open(archivo_local, "r") as archivo:
+            for line in archivo.readlines():
+                components = line.split(", ")
+                if components[0] == name:
+                    quantity = int(components[1])
+                    price = float(components[2])
+                    total += quantity * price
+                    break
+        print(total)
+    elif action == "8":
         os.remove(archivo_local)
         break
     else:
