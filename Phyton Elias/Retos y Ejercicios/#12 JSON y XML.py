@@ -40,8 +40,6 @@ crear_xml()  # Llamado a la funcion XML
 with open(xml_archivo) as fichero:
     print(fichero.read())
 
-os.remove(xml_archivo)
-
 
 # JSON
 
@@ -56,7 +54,6 @@ create_json()  # Llamado a la funcion JSON
 with open(json_archivo) as fichero:
     print(fichero.read())
 
-os.remove(json_archivo)
 
 # Extra
 
@@ -96,3 +93,6 @@ with open(json_archivo, "r") as fichero_json:
     datos_de_json = Datos(nombre, edad, fecha_nacimiento, lenguajes_prog)
 
 print(datos_de_json.__dict__)
+
+os.remove(xml_archivo)
+os.remove(json_archivo)
