@@ -5,14 +5,21 @@
 # Asincronia
 
 from datetime import datetime
-import time
 import asyncio
 
 
 async def tarea(nombre: str, duracion: int):
     print(f"Tarea: {nombre}, Duracion: {duracion}s, Inicio a {datetime.now()}")
-    time.sleep(duracion)
+    await asyncio.sleep(duracion)
     print(f"Tarea: {nombre}, Fin: {datetime.now()}")
 
 asyncio.run(tarea("1", 2))
-asyncio.run(tarea("2", 4))
+
+# Extra
+
+
+async def tarea_asincrona():
+    await asyncio.gather(tarea("C", 3), tarea("B", 2), tarea("A", 1))
+    await tarea("D", 1)
+
+asyncio.run(tarea_asincrona())
