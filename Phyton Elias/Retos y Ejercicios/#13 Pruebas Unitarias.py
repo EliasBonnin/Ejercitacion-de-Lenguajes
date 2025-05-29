@@ -5,6 +5,7 @@
 # Pruebas Unitarias
 
 import unittest
+from datetime import datetime, date
 
 
 def sum(a, b):
@@ -51,7 +52,7 @@ class TestDatos(unittest.TestCase):
     def setUp(self):
         self.datos = {"nombre: ": "Elias",
                       "edad: ": 26,
-                      "cumple: ": "12-02-99",
+                      "cumple: ": datetime.strptime("12-02-99", "%d-%m-%y").date(),
                       "lenguajes: ": ["Python", "C", "Java"]
                       }
 
@@ -64,7 +65,7 @@ class TestDatos(unittest.TestCase):
     def test_datos_correctos(self):
         self.assertIsInstance(self.datos["nombre: "], str)
         self.assertIsInstance(self.datos["edad: "], int)
-        self.assertIsInstance(self.datos["cumple: "], str)
+        self.assertIsInstance(self.datos["cumple: "], date)
         self.assertIsInstance(self.datos["lenguajes: "], list)
 
 
