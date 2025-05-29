@@ -5,7 +5,7 @@
 # Pruebas Unitarias
 
 import unittest
-# from datetime import datetime, date
+from datetime import datetime
 
 
 def sum(a, b):
@@ -35,6 +35,29 @@ class TestSum(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             sum("a", "7")
+
+
+# Extra
+
+
+datos = {"nombre: ": "Elias",
+         "edad: ": 26,
+         "cumple: ": datetime.strftime("12/02/99", "%d-%m-%y").date,
+         "lenguajes: ": ["Python", "C", "Java"]
+         }
+
+
+class TestDatos(unittest.TestCase):
+
+    def setUp(self):
+        self.datos = {"nombre: ": "Elias",
+                      "edad: ": 26,
+                      "cumple: ": datetime.strftime("12/02/99", "%d-%m-%y").date,
+                      "lenguajes: ": ["Python", "C", "Java"]
+                      }
+
+    def test_textcase(self):
+        self.assertIn("nombre: ", self.datos)
 
 
 unittest.main()
