@@ -22,5 +22,51 @@ def mostrar_dia(numero: int):
 
 
 mostrar_dia(1)
-mostrar_dia(2)
-mostrar_dia(4)
+
+
+# Extra
+
+class Estado_Pedido(Enum):
+    PENDIENTE = 1
+    ENVIADO = 2
+    ENTREGADO = 3
+    CANCELADO = 4
+
+
+class Pedido:
+
+    estado = Estado_Pedido.PENDIENTE
+
+    def __init__(self, id: int):
+        self.id = id
+
+    def enviado(self):
+        if self.estado == Estado_Pedido.PENDIENTE:
+            self.estado = Estado_Pedido.ENVIADO
+            self.mostrar_estado()
+        else:
+            print(f"El estado del pedido debe ser Pendiente, el estado del pedido actual es {self.estado.name}")
+
+    def entregado(self):
+        if self.estado == Estado_Pedido.ENVIADO:
+            self.estado = Estado_Pedido.ENTREGADO
+            self.mostrar_estado()
+        else:
+            print(f"El estado del pedido debe ser Enviado, el estado del pedido actual es {self.estado.name}")
+
+    def cancelado(self):
+        if self.estado != Estado_Pedido.ENTREGADO:
+            self.estado = Estado_Pedido.CANCELADO
+            self.mostrar_estado()
+        else:
+            print("El pedido ya se a entregado, no se puede CANCELAR")
+
+    def mostrar_estado(self):
+        print(f"El estado del pedido nro: {self.id} es: {self.estado.name}")
+
+
+pedido_1 = Pedido(1)
+
+pedido_1.enviado()
+pedido_1.entregado()
+pedido_1.cancelado()
