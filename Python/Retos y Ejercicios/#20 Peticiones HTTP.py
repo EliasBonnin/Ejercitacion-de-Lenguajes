@@ -4,6 +4,9 @@
 
 import requests
 
-respuesta = requests.get("https://google.com")
+respuesta = requests.get("https://google.com/")
 
-print(respuesta.text)
+if respuesta.status_code == 200:
+    print(respuesta.text)
+else:
+    print(f"No se obtuvo la respuesta exitosa codigo: {respuesta.status_code}")
