@@ -15,7 +15,7 @@ Este repositorio contiene ejercicios  y aprendizajes realizados en distintos lan
   - Listas / arreglos
   - Diccionarios / mapas
   - Conjuntos
-  - Pilas y colas (en algunos casos)
+  - Pilas y colas
 - Manejo de archivos
 - Modularización y uso de librerías
 - Principios de programación orientada a objetos
