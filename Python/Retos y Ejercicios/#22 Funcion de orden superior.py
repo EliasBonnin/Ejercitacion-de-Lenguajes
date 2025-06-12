@@ -5,6 +5,7 @@
 # Funcion como argumento
 
 from functools import reduce
+from datetime import datetime
 
 
 def superior_funcion(func, x):
@@ -66,3 +67,47 @@ def app_sum(x, y):
 
 
 print(reduce(app_sum, numbers))
+
+
+# Extra
+
+estudiantes = [
+    {"nombre": "Elias", "Nacimiento": "12-02-1999", "Grados": [5, 8, 5, 3, 10]},
+    {"nombre": "Carlos", "Nacimiento": "23-02-1979", "Grados": [6, 2, 4, 6, 8]},
+    {"nombre": "Javito", "Nacimiento": "18-02-1989", "Grados": [7, 4, 2, 5, 9]},
+    {"nombre": "Eljavo", "Nacimiento": "18-02-1989", "Grados": [8, 9, 10, 10, 9]}
+]
+
+
+def media(notas):
+    return sum(notas) / len(notas)
+
+
+print(list(map
+           (lambda estudiante:
+            {"nombre": estudiante["nombre"],
+             "Grados": media(estudiante["Grados"])}, estudiantes)))
+
+
+# Mejores
+
+print(
+    list(
+        map(lambda estudiante:
+            estudiante["nombre"],
+            filter(lambda estudiante: media(estudiante["Grados"]) >= 9, estudiantes)
+            )
+    )
+)
+
+# Nacimiento Ordenado desde el mas joven
+
+print(sorted(estudiantes, key=lambda estudiante: datetime.strptime(
+    estudiante["Nacimiento"], "%d-%m-%Y"), reverse=True))
+
+
+# Calificacion mas alta
+
+print(max(map(lambda estudiante: max(estudiante["Grados"]), estudiantes)))
+
+#
