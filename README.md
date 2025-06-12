@@ -21,7 +21,10 @@ Este repositorio contiene ejercicios  y aprendizajes realizados en distintos lan
 - Principios de programación orientada a objetos
 - Manejo de errores
 - Expresiones lambda y funciones anónimas
+- Peticiones HTTP
+- Conjuntos y Asincronia
 - Ejercicios integradores y mini proyectos
+
 
 ## Objetivo
 

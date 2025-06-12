@@ -109,5 +109,3 @@ print(sorted(estudiantes, key=lambda estudiante: datetime.strptime(
 # Calificacion mas alta
 
 print(max(map(lambda estudiante: max(estudiante["Grados"]), estudiantes)))
-
-#
