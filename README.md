@@ -1,6 +1,6 @@
 # Ejercitación de Lenguajes
 
-Este repositorio contiene ejercicios  y aprendizajes realizados en distintos languajes como: **Python**.
+Este repositorio contiene ejercicios  y aprendizajes realizados en distintos languajes como: **Python** **Bash**.
 
 ## Contenido
 
