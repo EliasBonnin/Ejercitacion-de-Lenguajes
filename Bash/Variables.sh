@@ -13,5 +13,4 @@ hoy=$(date) # Nos guarda la fecha y hora en el momento donde ejecutamos el scrip
 echo "Hola, Mi nombre es: $nombre."
 echo "Tengo $edad."
 echo "El username es: $USER"
-echo $Directorio
 echo $hoy
