@@ -18,7 +18,7 @@ print(singletone)
 singletone1 = Singleton()
 print(singletone1)
 
-# Extras
+# Extra
 
 
 class Usuario_Sesion:
