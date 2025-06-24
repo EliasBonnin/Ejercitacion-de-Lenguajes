@@ -29,3 +29,38 @@ def ejemplo_funcion3():
 ejemplo_funcion()
 ejemplo_funcion2()
 ejemplo_funcion3()
+
+
+# Extra
+
+def contador_llamadas(funcion):
+    def contar():
+        contar.contador_fun += 1
+        print(f"La funcion {funcion.__name__} se llamo {contar.contador_fun} vez/veces")
+        return funcion
+
+    contar.contador_fun = 0
+    return contar
+
+
+@contador_llamadas
+def ejemplo_funcion4():
+    pass
+
+
+@contador_llamadas
+def ejemplo_funcion5():
+    pass
+
+
+@contador_llamadas
+def ejemplo_funcion6():
+    pass
+
+
+ejemplo_funcion4()
+ejemplo_funcion4()
+ejemplo_funcion4()
+ejemplo_funcion5()
+ejemplo_funcion5()
+ejemplo_funcion6()
