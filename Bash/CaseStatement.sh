@@ -5,23 +5,32 @@
 
 #!/bin/bash
 
-echo "Cual es tu distribucion de linux favorita?"
+fin=0
 
-echo "1 - Arch"
-echo "2 - CentOS"
-echo "3 - Debian"
-echo "4 - Mint"
-echo "5 - Ubuntu"
-echo "6 - Otro...\n"
+while [ $fin -ne 1 ]
+do
+    echo "Cual es tu distribucion de linux favorita?"
 
-read distro;
+    echo "1 - Arch"
+    echo "2 - CentOS"
+    echo "3 - Debian"
+    echo "4 - Mint"
+    echo "5 - Ubuntu"
+    echo "6 - Otro"
+    echo "7 - Salir"
 
-case $distro in 
-    1) echo "Arch is rolling release.";;
-    2) echo "CentOS is a popular server." ;;
-    3) echo "Debian is a community distribution." ;;
-    4) echo "Mint is a popular on desktops and laptops." ;;
-    5) echo "Ubuntu is popular on both servers and computers.";;
-    6) echo "There are many distributions out there.";;
-    *) echo "No se eligio una opcion correcta."
-esac
+    read distro;
+
+    case $distro in 
+        1) echo "Arch is rolling release.";;
+        2) echo "CentOS is a popular server." ;;
+        3) echo "Debian is a community distribution." ;;
+        4) echo "Mint is a popular on desktops and laptops." ;;
+        5) echo "Ubuntu is popular on both servers and computers.";;
+        6) echo "There are many distributions out there.";;
+        7) fin=1 ;; 
+        *) echo "No se eligio una opcion correcta."
+    esac
+done
+
+echo "Gracias por usar el script"
