@@ -61,7 +61,7 @@ class TaskManager:
         self._print_time(tiempo_inicio, tiempo_fin)
 
     def _print_time(tiempo_inicio, tiempo_fin):
-        logging.debug(f"Tiempo de ejecucion {tiempo_fin - tiempo_inicio} segundos.")
+        logging.debug(f"Tiempo de ejecucion {tiempo_fin - tiempo_inicio:.6f} segundos.")
 
 
 tareas = TaskManager()
